@@ -6,16 +6,16 @@ using UnityEngine;
 namespace Raccoons.Identifiers.Guids
 {
     [Serializable]
-    public abstract class BaseGuidAssetList<T> : IGuidAssetList where T: IGuid
+    public abstract class BaseGuidAssetList<TGuid> : IGuidAssetList where TGuid: IGuid
     {
         [SerializeField]
-        private List<T> guids;
+        private List<TGuid> guids;
 
-        public List<T> Guids { get => guids; }
+        public List<TGuid> Guids { get => guids; }
 
         public BaseGuidAssetList()
         {
-            guids = new List<T>();
+            guids = new List<TGuid>();
         }
 
         public HashSet<IGuid> GetGuidsSet()
