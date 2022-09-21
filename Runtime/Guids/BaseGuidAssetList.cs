@@ -27,13 +27,13 @@ namespace Raccoons.Identifiers.Guids
         {
             return GetGuidsSet().IsSubsetOf(compareTo.GetGuidsSet());
         }
-        public bool IsContains(IGuidAssetList compareTo)
+        public bool Contains(IGuidAssetList compareTo)
         {
             bool result = false;
             var tags = GetGuidsSet();
-            foreach (var tag1 in compareTo.GetGuidsSet())
+            foreach (var tag in compareTo.GetGuidsSet())
             {
-                if (tags.Contains(tag1) == true)
+                if (tags.Contains(tag) == true)
                 {
                     result = true;
                     break;
@@ -42,7 +42,7 @@ namespace Raccoons.Identifiers.Guids
 
             return result;
         }
-        public bool IsContainGuid(IGuid guid)
+        public bool ContainGuid(IGuid guid)
         {
             return GetGuidsSet().Contains(guid);
         }
