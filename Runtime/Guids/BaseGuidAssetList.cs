@@ -42,7 +42,7 @@ namespace Raccoons.Identifiers.Guids
 
             return result;
         }
-        public bool ContainGuid(IGuid guid)
+        public bool ContainsGuid(IGuid guid)
         {
             return GetGuidsSet().Contains(guid);
         }
